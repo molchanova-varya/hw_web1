@@ -1,97 +1,183 @@
-/* Общие стили для всех страниц */
-
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
+    background-color: #dcdee0;
+    color: #333;
 }
 
-header, nav, main, footer {
-    display: block;
-    padding: 20px;
+header h1 {
+    text-align: center;
+    font-family: 'Lobster', cursive;
+    font-size: 36px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #000 !important;
 }
 
-header, footer {
-    background-color: #0b15cd;
-    color: #fff;
+nav {
+    background-image: url('web3.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 60px;
 }
 
 nav ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
 }
 
 nav ul li {
-    display: inline;
-    margin-right: 10px;
+    margin: 0 30px;
 }
 
 nav ul li a {
-    color: #0b15cd;
+    color: white;
+    font-weight: bold;
     text-decoration: none;
+    transition: color 0.3s ease;
+    font-size: 20px;
+}
+
+nav ul li a:hover {
+    color: #8a4c4c;
 }
 
 main {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
 }
 
 .content {
     flex: 2;
+    padding: 20px;
 }
 
 .gallery {
     flex: 1;
     text-align: center;
+    padding: 20px;
 }
 
 .gallery img {
-    width: 100%;
-    margin-bottom: 10px;
+    max-width: 70%;
+    height: auto;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.gallery img:hover {
+    transform: scale(1.1);
 }
 
 footer {
+    background-image: url('web3.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     text-align: center;
     clear: both;
+    background-color: #009688;
+    color: #fff;
+    padding: 20px;
+    margin-top: 20px;
 }
 
-/* Стили для формы обратной связи */
+.footer-text {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.footer-link {
+    color: #fff;
+    text-decoration: underline;
+    margin: 0 10px;
+}
+
+.footer-link:hover {
+    color: #aea2a2;
+}
+
+textarea {
+    width: 100%;
+    padding: 20px;
+    border: 1px solid #a1a4b7;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    transition: border-color 0.3s ease;
+    resize: vertical;
+    text-align: left;
+}
+
 .contact-form {
-    max-width: 400px;
-    margin: 0 auto;
+    width: 100%;
+    max-width: 500px;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
 }
 
 .form-group {
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 }
 
 label {
     display: block;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
 }
 
-input[type="text"],
-input[type="email"],
-textarea {
-    width: 100%;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-    font-size: 16px;
-    margin-top: 5px;
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+    border-color: #797ca0 !important;
 }
 
 button {
-    background-color: #0b15cd;
+    background-color: #009688;
     color: #fff;
-    padding: 10px 20px;
+    padding: 12px 24px;
     border: none;
     border-radius: 4px;
     cursor: pointer;
     font-size: 16px;
+    transition: background-color 0.3s ease;
 }
 
 button:hover {
-    background-color: #555;
+    background-color: #00796b;
 }
+
+h1,
+h2 {
+    animation: fadeInUp 0.5s ease both;
+}
+
+h2::before {
+    content: "\2666";
+    margin-right: 5px;
+    color: #7d86a5;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
