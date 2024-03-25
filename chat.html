@@ -3,34 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Чат с автором</title>
-    <link rel="stylesheet" href="chat.css">
+    <title>Виртуальный чат с автором</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="chat.js" defer></script>
 </head>
 <body>
     <header>
         <h1>Чат с автором</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Что-то про меня</a></li>
-                <li><a href="contact.html">Книга жалоб и предложений</a></li>
-                <li><a href="map.html">Интерактивная карта</a></li> 
-                <li><a href="chat.html">Поболтать</a></li> 
-            </ul>
-        </nav>
     </header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Что-то про меня</a></li>
+            <li><a href="contact.html">Книга жалоб и предложений</a></li>
+            <li><a href="map.html">Интерактивная карта</a></li> 
+            <li><a href="chat.html">Поболтать</a></li> 
+        </ul>
+    </nav>
     <main>
-        <div id="chat-container">
-            <div id="chat-messages"></div>
-            <div id="chat-input">
-                <input type="text" id="message-input" placeholder="Введите сообщение...">
+        <section class="content">
+            <div id="chat-container">
+                <div id="chat-messages"></div>
+                <textarea id="user-input" placeholder="Введите ваше сообщение..."></textarea>
                 <button id="send-button">Отправить</button>
+                <button id="voice-button">Голосовой ввод</button>
             </div>
-        </div>
+        </section>
     </main>
     <footer>
         <p>&copy; 2024 // Я люблю грузинскую кухню</p>
     </footer>
-    <script src="chat.js" defer></script>
 </body>
 </html>
+
