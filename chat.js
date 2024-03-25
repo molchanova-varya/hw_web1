@@ -9,7 +9,6 @@ window.onload = function() {
         'как дела?': 'Все отлично, спасибо! А у вас?',
         'спасибо': 'Пожалуйста! Если у вас возникнут еще вопросы, не стесняйтесь спрашивать.',
         'пока': 'До свидания! Надеюсь, увидимся скоро.',
-        // Добавьте свои ключевые слова и ответы здесь
     };
 
     function sendMessage(message, sender) {
@@ -22,7 +21,7 @@ window.onload = function() {
 
         messageElement.appendChild(messageText);
         chatMessages.appendChild(messageElement);
-        chatMessages.scrollTop = chatMessages.scrollHeight; // Прокрутка вниз при добавлении нового сообщения
+        chatMessages.scrollTop = chatMessages.scrollHeight; 
     }
 
     function generateResponse(message) {
@@ -34,7 +33,6 @@ window.onload = function() {
                 return;
             }
         }
-        // Если нет ключевых слов, генерируем обычный ответ
         const defaultResponse = 'Извините, я не понимаю. Можете перефразировать?';
         sendMessage(defaultResponse, 'author');
     }
@@ -44,25 +42,25 @@ window.onload = function() {
         if (message !== '') {
             sendMessage(message, 'user');
             userInput.value = '';
-            setTimeout(() => generateResponse(message), 1000); // Задержка перед генерацией ответа
+            setTimeout(() => generateResponse(message), 1000); 
         }
     }
 
     function handleVoiceInput() {
         const recognition = new webkitSpeechRecognition(); // Создаем объект распознавания речи
-        recognition.lang = 'ru-RU'; // Устанавливаем язык для распознавания
-        recognition.start(); // Начинаем распознавание речи
+        recognition.lang = 'ru-RU'; 
+        recognition.start(); 
         recognition.onresult = function(event) {
-            const transcript = event.results[0][0].transcript; // Получаем распознанный текст
-            sendMessage(transcript, 'user'); // Отправляем распознанный текст в чат как сообщение пользователя
-            generateResponse(transcript); // Генерируем ответ
+            const transcript = event.results[0][0].transcript; 
+            sendMessage(transcript, 'user'); 
+            generateResponse(transcript); 
         };
     }
 
     sendButton.addEventListener('click', handleUserInput);
     userInput.addEventListener('keydown', function(event) {
         if (event.key === 'Enter') {
-            event.preventDefault(); // Предотвращаем перенос строки в текстовом поле
+            event.preventDefault();
             handleUserInput();
         }
     });
