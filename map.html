@@ -5,30 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Интерактивная карта</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="map.css">
-
-    <script src="map.js"></script>
-    
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <style>
+        #map { height: 400px; }
+    </style>
 </head>
 <body>
     <header>
         <h1>Интерактивная карта</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Что-то про меня</a></li>
-                <li><a href="contact.html">Книга жалоб и предложений</a></li>
-                <li><a href="map.html">Интерактивная карта</a></li> 
-                <li><a href="chat.html">Поболтать</a></li> 
-            </ul>
-        </nav>
     </header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Что-то про меня</a></li>
+            <li><a href="contact.html">Книга жалоб и предложений</a></li>
+            <li><a href="map.html">Интерактивная карта</a></li> 
+            <li><a href="chat.html">Поболтать</a></li> 
+        </ul>
+    </nav>
     <main>
-        <div id="map"></div>
+        <section class="content">
+            <div id="map"></div>
+        </section>
     </main>
     <footer>
-        <p>&copy; 2024 // Я люблю грузинскую кухню</p>
+        <p>&copy; 2024 // Я люблю грузиснкую кухню</p>
     </footer>
-    <script src="map.js"></script>
+
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="map.js"></script> <!-- Подключение JavaScript файла -->
 </body>
 </html>
 
